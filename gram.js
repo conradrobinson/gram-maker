@@ -32,14 +32,14 @@ for (let i = 0; i < points.length; i++) {
 }
 points2 = points
 for (let i = 0; i < points.length; i++) {
-    for (let j = 0; j < points2.length; j++) {
-        line(points[i][0], points[i][1], points2[j][0], points2[j][1], canvas)
-        console.log([points[i][0], points[i][1], points2[j][0], points2[j][1]])
-
+    for (let j = i+1; j < points.length; j++) {
+        line(points[i][0], points[i][1], points[j][0], points[j][1], canvas)
+        console.log("Tells me how many lines it actually draws")
     }
-    points2.shift()
-
 }
+console.log("Least efficient would be " + num**2 + " or n^2 generally")
+
+
 
 function point(x, y, canvas){
     canvas.fillRect(x-5,y-5,10,10);
